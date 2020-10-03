@@ -1,5 +1,7 @@
 import { World } from 'ecsy'
 import { RenderSystem } from '../systems/RenderSystem'
+import { PhysicsSystem } from '../systems/PhysicsSystem'
+import { CameraSystem } from '../systems/CameraSystem'
 
 let world: World
 
@@ -7,6 +9,8 @@ export const initEcsy = () => {
   world = new World()
 
   world.registerSystem(RenderSystem)
+  world.registerSystem(PhysicsSystem)
+  world.registerSystem(CameraSystem)
   run()
 }
 

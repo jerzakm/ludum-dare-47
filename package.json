@@ -25,9 +25,11 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "@types/matter-js": "^0.14.5",
     "color": "^3.1.2",
     "ecsy": "^0.4.2",
     "matter-js": "^0.14.2",
+    "mousetrap": "^1.6.5",
     "perlin.js": "^1.0.0",
     "rot-js": "^2.1.4",
     "sirv-cli": "^1.0.0",

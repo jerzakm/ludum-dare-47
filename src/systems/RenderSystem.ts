@@ -1,12 +1,5 @@
 import { System } from 'ecsy'
-import {
-  renderer,
-  camera,
-  mainScene,
-  controls,
-  pixelPass,
-  composer,
-} from '../core/three'
+import { renderer, camera, mainScene, pixelPass, composer } from '../core/three'
 import * as Stats from 'stats-js'
 
 const stats = new Stats.default()
@@ -16,6 +9,7 @@ document.body.appendChild(stats.dom)
 export class RenderSystem extends System {
   init() {
     document.body.appendChild(renderer.domElement)
+    renderer.domElement.requestPointerLock()
     renderer.domElement.style.position = 'fixed'
 
     window.addEventListener('resize', onWindowResize, false)
@@ -36,7 +30,6 @@ function onWindowResize() {
   pixelPass.uniforms['resolution'].value
     .set(window.innerWidth, window.innerHeight)
     .multiplyScalar(window.devicePixelRatio)
-  controls.update()
 
   renderer.setSize(window.innerWidth, window.innerHeight)
 }
